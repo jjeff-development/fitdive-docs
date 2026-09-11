@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finding a dive-site ID — FitDive</title>
+<meta name="description" content="How to find a numeric dive-site ID to use as your fallback dive site in FitDive, using ScubaGo's dive site search.">
+<link rel="icon" href="/assets/icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .step{display:flex;gap:20px;align-items:flex-start;margin:28px 0;}
+  .step-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+  .step-body{flex:1;min-width:0;}
+  .step-body h3{margin:0 0 6px;}
+  .step-body p{margin:0 0 14px;}
+  .mock{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--paper-raised);box-shadow:0 1px 3px rgba(0,0,0,.06);}
+  .mock-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--paper);}
+  .mock-dot{width:9px;height:9px;border-radius:50%;background:var(--line);}
+  .mock-url{flex:1;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);background:var(--paper-raised);border:1px solid var(--line);border-radius:7px;padding:5px 10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+  .mock-url .hl{color:var(--flag-red);font-weight:600;background:var(--flag-red-soft);border-radius:4px;padding:0 2px;}
+  .mock-body{padding:16px;}
+  .mock-logo{font-family:"IBM Plex Sans",sans-serif;font-weight:600;font-size:13px;color:var(--ink);}
+  .mock-logo b{color:var(--flag-red);}
+  .mock-select{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:13px;color:var(--ink);margin-top:12px;}
+  .mock-menu{border:1px solid var(--line);border-radius:8px;margin-top:8px;overflow:hidden;}
+  .mock-menu-item{padding:9px 12px;font-size:13px;color:var(--ink-soft);border-bottom:1px solid var(--line);}
+  .mock-menu-item:last-child{border-bottom:none;}
+  .mock-menu-item.active{background:var(--teal-soft);color:var(--teal);font-weight:600;}
+  .mock-card{border:1px solid var(--line);border-radius:8px;padding:12px;margin-top:12px;}
+  .mock-card .name{font-family:"Fraunces",Georgia,serif;font-size:17px;font-weight:600;color:var(--ink);}
+  .mock-card .stars{color:var(--gold);font-size:13px;margin-top:3px;}
+  .mock-card .loc{font-size:12px;color:var(--ink-soft);margin-top:3px;}
+  .id-callout{display:flex;align-items:center;gap:10px;margin-top:14px;padding:10px 14px;background:var(--flag-red-soft);border-radius:8px;}
+  .id-callout .num{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--flag-red);font-size:15px;}
+  .id-callout .lbl{font-size:12.5px;color:var(--ink-soft);}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/icon.png" alt=""><span>FitDive</span></a>
+    <nav class="site">
+      <a href="/privacy.html">Privacy</a>
+      <a href="/support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="eyebrow">Settings → Fallback dive-site ID</p>
+    <h1>Finding a dive-site ID</h1>
+    <p class="lede">FitDive normally works out your dive site automatically from the .fit file's GPS, or your phone's location as a backup. When neither is available, it falls back to a dive-site ID you set once in Settings. Here's how to find one.</p>
+
+    <div class="note">
+      <b>You only need to do this once.</b> Pick the site you dive most often — your local shop, quarry, or home reef — and FitDive will only fall back to it on the rare dive where GPS and location both come up empty.
+    </div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>Open ScubaGo's search</h3>
+        <p>Go to <code>scubago.com/en/search</code> in a browser (phone or computer both work).</p>
+        <div class="mock">
+          <div class="mock-bar">
+            <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+            <div class="mock-url">scubago.com/en/search</div>
+          </div>
+          <div class="mock-body">
+            <div class="mock-logo">scuba<b>go</b></div>
+            <div class="mock-select">Courses <span>▾</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>Switch the category to Dive Sites</h3>
+        <p>The search defaults to <em>Courses</em>. Open that dropdown and pick <strong>Dive Sites</strong> instead.</p>
+        <div class="mock">
+          <div class="mock-bar">
+            <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+            <div class="mock-url">scubago.com/en/search</div>
+          </div>
+          <div class="mock-body">
+            <div class="mock-menu">
+              <div class="mock-menu-item">Courses</div>
+              <div class="mock-menu-item active">Dive Sites</div>
+              <div class="mock-menu-item">Wildlife</div>
+              <div class="mock-menu-item">Dive Trips</div>
+              <div class="mock-menu-item">Events</div>
+              <div class="mock-menu-item">Centers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>Find your dive site</h3>
+        <p>Use the search box (magnifying glass, top right) or browse the list, and open the site you want.</p>
+        <div class="mock">
+          <div class="mock-bar">
+            <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+            <div class="mock-url">scubago.com/en/explore/divesite/white-star-quarry-1965</div>
+          </div>
+          <div class="mock-body">
+            <div class="mock-card">
+              <div class="name">White Star Quarry</div>
+              <div class="stars">★★★★☆ (11,201)</div>
+              <div class="loc">North America › United States</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h3>Copy the number at the end of the URL</h3>
+        <p>Once you're on the site's page, look at the address bar. The last part of the URL is <code>&lt;site-name&gt;-&lt;ID&gt;</code> — the trailing number is what FitDive needs.</p>
+        <div class="mock">
+          <div class="mock-bar">
+            <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+            <div class="mock-url">scubago.com/en/explore/divesite/white-star-quarry-<span class="hl">1965</span></div>
+          </div>
+        </div>
+        <div class="id-callout">
+          <span class="num">1965</span>
+          <span class="lbl">← paste this into "Fallback dive-site ID" in Settings</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="note warn">
+      <b>Why ScubaGo, not MySSI directly?</b> MySSI's own dive-site search is built into FitDive's automatic lookup already. ScubaGo happens to use the same underlying dive-site IDs and is easier to browse by hand when you already know which site you want.
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>FitDive</span>
+    <span><a href="/privacy.html">Privacy</a> · <a href="/support.html">Support</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

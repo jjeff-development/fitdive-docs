@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support &amp; Status — FitDive</title>
+<meta name="description" content="Report a bug, check known issues, and read how FitDive holds up if MySSI changes something on their end.">
+<link rel="icon" href="/assets/icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/icon.png" alt=""><span>FitDive</span></a>
+    <nav class="site">
+      <a href="/privacy.html">Privacy</a>
+      <a href="/support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="eyebrow">Support</p>
+    <h1>Support &amp; Status</h1>
+
+    <h2>Report a bug</h2>
+    <p>In the app: <strong>Settings → Report a Bug</strong>. You can optionally attach your anonymized run log (timing and status of each API call only — never your email, password, diver ID, or location) to help diagnose the issue faster.</p>
+    <p>You can also email us directly — see the app's Settings screen for the current support address.</p>
+
+    <h2>Current status</h2>
+    <div id="status-card" class="card status-card">
+      <p class="status-line">Checking…</p>
+    </div>
+    <p>The app checks this automatically before you submit a bug report, and shows a banner if there's something already known — so you're not the fifth person to report the same thing the same day.</p>
+
+    <h2>A note on how FitDive works</h2>
+    <p>FitDive isn't an official MySSI or Garmin integration — there's no public API for either. It works by using your own MySSI login the way a browser would, and by reading the structure of Garmin's <code>.fit</code> file format directly.</p>
+
+    <div class="note warn">
+      <b>MySSI (or Garmin's <code>.fit</code> format) could change in a way that breaks FitDive without warning.</b> If that happens:
+      <ul>
+        <li>We're usually able to tell quickly, because it breaks the same way for everyone.</li>
+        <li>We treat it as a priority fix — this app doesn't work at all if the integration is broken, so there's no version of "good enough for now."</li>
+        <li>We'll post here as soon as we know, and again once it's fixed.</li>
+      </ul>
+    </div>
+
+    <p>We can't promise a fix time, since it depends on what changed on MySSI's end and whether they left us a way to adapt. But we will always be working on it, and this page is where you'll hear about it first.</p>
+
+    <h2>What we can't help with</h2>
+    <p>FitDive submits dives using the same fields MySSI's own "Add Dive" form uses. If a dive looks wrong <em>inside MySSI</em> after import, check the values FitDive showed you on the Review screen before you submitted — if those were right, the issue is downstream of FitDive and MySSI's own support is the right place to ask.</p>
+    <p><strong>FitDive doesn't check for duplicate dives.</strong> It confirms your dive was logged, but not whether that exact dive was already in your logbook — sharing the same file into FitDive twice will create two entries. If that happens, delete the extra one directly in MySSI.</p>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>FitDive</span>
+    <span><a href="/privacy.html">Privacy</a> · <a href="/support.html">Support</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var el = document.querySelector("#status-card .status-line");
+  var card = document.getElementById("status-card");
+  fetch("/status.txt", { cache: "no-store" })
+    .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+    .then(function (text) {
+      var line = text.trim();
+      if (!line || line.toLowerCase() === "ok") {
+        card.classList.add("status-ok");
+        el.textContent = "✓ Nothing known right now — everything's working normally.";
+      } else {
+        card.classList.add("status-warn");
+        el.textContent = line;
+      }
+    })
+    .catch(function () {
+      el.textContent = "Status unavailable right now.";
+    });
+})();
+</script>
+
+</body>
+</html>

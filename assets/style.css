@@ -1,0 +1,84 @@
+:root{
+  --ink:#0B1F2A;
+  --ink-soft:#4A5F6B;
+  --paper:#F4F1EA;
+  --paper-raised:#FFFFFF;
+  --line:#DDD6C8;
+  --teal:#0E7C86;
+  --teal-soft:#E4EFEF;
+  --gold:#9A6B12;
+  --gold-soft:#F3E7CE;
+  --flag-red:#C8102E;
+  --flag-red-soft:#FBE7EA;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ink:#EDEFEF; --ink-soft:#A9B7BD; --paper:#0F1A1E; --paper-raised:#16242A;
+    --line:#26363C; --teal:#4FC2CC; --teal-soft:#132B2D;
+    --gold:#E0B255; --gold-soft:#2E2513; --flag-red:#E85B6E; --flag-red-soft:#2E1418;
+  }
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  line-height:1.6;
+}
+img{max-width:100%;}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+
+header.site{border-bottom:1px solid var(--line);padding:20px 0;}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);}
+.brand img{width:32px;height:32px;border-radius:8px;display:block;}
+.brand span{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:19px;}
+nav.site a{color:var(--ink-soft);text-decoration:none;font-size:14.5px;margin-left:22px;}
+nav.site a:hover{color:var(--teal);}
+
+main{padding:56px 0 90px;}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin:0 0 12px;}
+h1{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(30px,5vw,44px);margin:0 0 16px;text-wrap:balance;line-height:1.1;}
+h2{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:24px;margin:44px 0 14px;}
+h3{font-size:16px;font-weight:600;margin:22px 0 8px;}
+p{color:var(--ink);}
+main p, main li{color:var(--ink-soft);font-size:15.5px;}
+main strong{color:var(--ink);}
+.lede{font-size:18px;color:var(--ink-soft);max-width:56ch;}
+a{color:var(--teal);}
+ul,ol{padding-left:22px;}
+li{margin-bottom:6px;}
+
+.pill-row{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px;}
+.pill{font-family:"IBM Plex Mono",monospace;font-size:12px;background:var(--teal-soft);color:var(--teal);padding:6px 12px;border-radius:999px;}
+
+.card{background:var(--paper-raised);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin:18px 0;}
+.card h3{margin-top:0;}
+.card p:last-child{margin-bottom:0;}
+
+.status-card{padding:16px 20px;}
+.status-line{margin:0;font-family:"IBM Plex Mono",monospace;font-size:14px;color:var(--ink-soft);}
+.status-card.status-ok{border-color:var(--teal);background:var(--teal-soft);}
+.status-card.status-ok .status-line{color:var(--teal);}
+.status-card.status-warn{border-color:var(--flag-red);background:var(--flag-red-soft);}
+.status-card.status-warn .status-line{color:var(--flag-red);}
+
+.price{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:34px;color:var(--ink);}
+.price span{font-family:"IBM Plex Sans",sans-serif;font-size:15px;color:var(--ink-soft);font-weight:400;}
+
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0;}
+.btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:13px 22px;border-radius:10px;}
+.btn.secondary{background:transparent;color:var(--teal);border:1px solid var(--teal);}
+
+.note{border-left:3px solid var(--gold);background:var(--gold-soft);border-radius:0 10px 10px 0;padding:14px 18px;font-size:14.5px;margin:20px 0;}
+.note b{color:var(--gold);}
+.note.warn{border-left-color:var(--flag-red);background:var(--flag-red-soft);}
+.note.warn b{color:var(--flag-red);}
+
+code{font-family:"IBM Plex Mono",monospace;font-size:.92em;background:var(--teal-soft);color:var(--teal);padding:1px 6px;border-radius:5px;}
+
+footer.site{border-top:1px solid var(--line);padding:28px 0;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);}
+footer.site .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+footer.site a{color:var(--ink-soft);}
