@@ -51,6 +51,10 @@ a{color:var(--teal);}
 ul,ol{padding-left:22px;}
 li{margin-bottom:6px;}
 
+.shots{display:flex;gap:16px;overflow-x:auto;margin:28px -24px 0;padding:4px 24px 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
+.shots a{flex:0 0 auto;scroll-snap-align:start;}
+.shots img{display:block;width:210px;height:auto;border-radius:16px;border:1px solid var(--line);background:var(--paper-raised);}
+
 .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px;}
 .pill{font-family:"IBM Plex Mono",monospace;font-size:12px;background:var(--teal-soft);color:var(--teal);padding:6px 12px;border-radius:999px;}
 
