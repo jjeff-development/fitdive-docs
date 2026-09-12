@@ -55,6 +55,9 @@ li{margin-bottom:6px;}
 .shots a{flex:0 0 auto;scroll-snap-align:start;}
 .shots img{display:block;width:135px;height:auto;border-radius:12px;border:1px solid var(--line);background:var(--paper-raised);}
 
+.inline-shot{display:block;margin:6px 0 8px;}
+.inline-shot img{width:100%;max-width:320px;border-radius:14px;border:1px solid var(--line);}
+
 .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px;}
 .pill{font-family:"IBM Plex Mono",monospace;font-size:12px;background:var(--teal-soft);color:var(--teal);padding:6px 12px;border-radius:999px;}
 
