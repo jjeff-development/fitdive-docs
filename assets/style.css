@@ -69,6 +69,13 @@ li{margin-bottom:6px;}
 .card h3{margin-top:0;}
 .card p:last-child{margin-bottom:0;}
 
+.coming-soon-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;}
+.coming-soon-card{background:var(--gold-soft);border:1px solid var(--gold);border-radius:16px;padding:22px 24px;}
+.coming-soon-label{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:0 0 8px;}
+.coming-soon-card h3{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:22px;margin:0 0 8px;color:var(--ink);}
+.coming-soon-card p:last-child{margin:0;font-size:15px;}
+@media (max-width:600px){.coming-soon-grid{grid-template-columns:1fr;}}
+
 .status-card{padding:16px 20px;}
 .status-line{margin:0;font-family:"IBM Plex Mono",monospace;font-size:14px;color:var(--ink-soft);}
 .status-card.status-ok{border-color:var(--teal);background:var(--teal-soft);}
