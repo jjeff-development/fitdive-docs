@@ -55,12 +55,28 @@ li{margin-bottom:6px;}
 .demo-video-frame{width:100%;max-width:300px;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--paper-raised);box-shadow:0 12px 32px -16px rgba(11,31,42,.35);}
 .demo-video-frame video{display:block;width:100%;}
 
-.shots{display:flex;gap:16px;overflow-x:auto;margin:28px -24px 0;padding:4px 24px 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
-.shots a{flex:0 0 auto;scroll-snap-align:start;}
-.shots img{display:block;width:135px;height:auto;border-radius:12px;border:1px solid var(--line);background:var(--paper-raised);}
+.shots{
+  display:flex;gap:16px;overflow-x:auto;margin:28px -24px 0;padding:4px 24px 14px;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;scrollbar-color:var(--line) transparent;
+}
+.shots::-webkit-scrollbar{height:8px;}
+.shots::-webkit-scrollbar-track{background:transparent;}
+.shots::-webkit-scrollbar-thumb{background:var(--line);border-radius:999px;}
+.shots::-webkit-scrollbar-thumb:hover{background:var(--ink-soft);}
+.shots .shot{flex:0 0 auto;scroll-snap-align:start;}
+.shots .shot img{width:135px;}
 
-.inline-shot{display:block;margin:6px 0 8px;}
+.shot{border:none;background:none;padding:0;cursor:zoom-in;display:block;}
+.shot img{display:block;height:auto;border-radius:12px;border:1px solid var(--line);background:var(--paper-raised);}
+
+.inline-shot{margin:6px 0 8px;text-align:center;}
 .inline-shot img{width:100%;max-width:320px;border-radius:14px;border:1px solid var(--line);}
+
+.lightbox{position:fixed;inset:0;background:rgba(11,31,42,.88);display:flex;align-items:center;justify-content:center;padding:32px;z-index:100;cursor:zoom-out;}
+.lightbox[hidden]{display:none;}
+.lightbox img{max-width:100%;max-height:100%;border-radius:14px;box-shadow:0 20px 60px -20px rgba(0,0,0,.6);}
+.lightbox-close{position:fixed;top:20px;right:24px;background:none;border:none;color:#fff;font-size:32px;line-height:1;cursor:pointer;padding:8px;}
 
 .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px;}
 .pill{font-family:"IBM Plex Mono",monospace;font-size:12px;background:var(--teal-soft);color:var(--teal);padding:6px 12px;border-radius:999px;}

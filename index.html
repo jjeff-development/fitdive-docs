@@ -76,24 +76,27 @@
     </div>
 
     <div class="shots">
-      <a href="/assets/screenshots/location.png" target="_blank" rel="noopener">
+      <button type="button" class="shot" data-full="/assets/screenshots/location.png" aria-label="View larger screenshot">
         <img src="/assets/screenshots/location-web.jpg" alt="FitDive automatically finds your dive site from GPS, matched against your real MySSI sites">
-      </a>
-      <a href="/assets/screenshots/buddy-sync.png" target="_blank" rel="noopener">
+      </button>
+      <button type="button" class="shot" data-full="/assets/screenshots/buddy-sync.png" aria-label="View larger screenshot">
         <img src="/assets/screenshots/buddy-sync-web.jpg" alt="Dive buddies synced automatically from your MySSI buddy list, with photos">
-      </a>
-      <a href="/assets/screenshots/add-details.png" target="_blank" rel="noopener">
+      </button>
+      <button type="button" class="shot" data-full="/assets/screenshots/add-details.png" aria-label="View larger screenshot">
         <img src="/assets/screenshots/add-details-web.jpg" alt="Gear, conditions, and tank info mapped straight into MySSI's own fields">
-      </a>
-      <a href="/assets/screenshots/import-log.png" target="_blank" rel="noopener">
+      </button>
+      <button type="button" class="shot" data-full="/assets/screenshots/duplicate-check.png" aria-label="View larger screenshot">
+        <img src="/assets/screenshots/duplicate-check-web.jpg" alt="FitDive warns before a duplicate dive number, and tells a real gap from one">
+      </button>
+      <button type="button" class="shot" data-full="/assets/screenshots/import-log.png" aria-label="View larger screenshot">
         <img src="/assets/screenshots/import-log-web.jpg" alt="A full on-device record of every import FitDive has made">
-      </a>
-      <a href="/assets/screenshots/settings-buddies.png" target="_blank" rel="noopener">
+      </button>
+      <button type="button" class="shot" data-full="/assets/screenshots/settings-buddies.png" aria-label="View larger screenshot">
         <img src="/assets/screenshots/settings-buddies-web.jpg" alt="Sync your buddy list and pick your units once in Settings">
-      </a>
-      <a href="/assets/screenshots/settings-privacy.png" target="_blank" rel="noopener">
+      </button>
+      <button type="button" class="shot" data-full="/assets/screenshots/settings-privacy.png" aria-label="View larger screenshot">
         <img src="/assets/screenshots/settings-privacy-web.jpg" alt="Your MySSI credentials stay on your device, stored in the iOS Keychain">
-      </a>
+      </button>
     </div>
 
     <h2>What it does</h2>
@@ -104,9 +107,9 @@
       <li>You get a confirmation with the full dive summary: depth, time, temperature, gas, site, and the result.</li>
     </ol>
 
-    <a href="/assets/screenshots/garmin-share.png" target="_blank" rel="noopener" class="inline-shot">
+    <button type="button" class="shot inline-shot" data-full="/assets/screenshots/garmin-share.png" aria-label="View larger screenshot">
       <img src="/assets/screenshots/garmin-share-web.jpg" alt="Sharing a dive from the Garmin Dive app's share sheet, with FitDive as one of the options">
-    </a>
+    </button>
 
     <h2>Beyond the basics</h2>
     <p class="lede">Everything a Garmin file can tell us is filled in automatically. For the rest, FitDive has an optional Add Details screen — nothing required, all pre-filled with sensible defaults:</p>
@@ -167,6 +170,43 @@
     <span><a href="/privacy.html">Privacy</a> · <a href="/support.html">Support</a></span>
   </div>
 </footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+<script>
+(function(){
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var closeBtn = document.getElementById('lightboxClose');
+
+  function open(src, alt){
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){
+    lightbox.hidden = true;
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.shot[data-full]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var img = btn.querySelector('img');
+      open(btn.getAttribute('data-full'), img ? img.alt : '');
+    });
+  });
+  closeBtn.addEventListener('click', close);
+  lightbox.addEventListener('click', function(e){
+    if (e.target === lightbox) close();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && !lightbox.hidden) close();
+  });
+})();
+</script>
 
 </body>
 </html>
