@@ -1,0 +1,8 @@
+{
+  "status": "Shipped",
+  "name": "FitDive",
+  "description": "Reads a Garmin dive computer's .fit file and logs the dive straight into a diver's MySSI e-logbook — dive site, depth, time, temperature, and gas filled in automatically. Live on the App Store.",
+  "url": "https://fitdive.app",
+  "image": "https://fitdive.app/assets/screenshots/location-web.jpg",
+  "imageAlt": "FitDive automatically matching a Garmin dive to a real dive site"
+}
