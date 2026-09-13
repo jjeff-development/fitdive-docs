@@ -70,7 +70,7 @@ li{margin-bottom:6px;}
 .shot{border:none;background:none;padding:0;cursor:zoom-in;display:block;}
 .shot img{display:block;height:auto;border-radius:12px;border:1px solid var(--line);background:var(--paper-raised);}
 
-.inline-shot{margin:6px 0 8px;text-align:center;}
+.inline-shot{margin:6px auto 8px;}
 .inline-shot img{width:100%;max-width:320px;border-radius:14px;border:1px solid var(--line);}
 
 .lightbox{position:fixed;inset:0;background:rgba(11,31,42,.88);display:flex;align-items:center;justify-content:center;padding:32px;z-index:100;cursor:zoom-out;}
