@@ -81,6 +81,8 @@ li{margin-bottom:6px;}
 .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px;}
 .pill{font-family:"IBM Plex Mono",monospace;font-size:12px;background:var(--teal-soft);color:var(--teal);padding:6px 12px;border-radius:999px;}
 
+h2 .version-tag{display:inline-block;vertical-align:middle;margin-left:10px;font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:400;letter-spacing:.04em;background:var(--teal-soft);color:var(--teal);padding:3px 10px;border-radius:999px;}
+
 .card{background:var(--paper-raised);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin:18px 0;}
 .card h3{margin-top:0;}
 .card p:last-child{margin-bottom:0;}
