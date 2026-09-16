@@ -8,7 +8,7 @@ Plain static HTML, served via GitHub Pages. No build step.
 - `docs.html` — docs table of contents
 - `setup.html` — getting-started setup guide
 - `using.html` — tour of every screen in the app
-- `garmin-import.html` — how site-finding and bulk Garmin history import work
+- `garmin-import.html` — how the bulk Garmin Connect history import works
 - `dive-matching.html` — how a Garmin dive is checked against your MySSI logbook, including the timezone caveat
 - `find-dive-site.html` — how to find a fallback dive-site ID
 - `privacy.html` — Privacy Policy (App Store submission URL)
