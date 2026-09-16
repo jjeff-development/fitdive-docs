@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Importing from a Garmin export — FitDive</title>
+<meta name="description" content="How FitDive turns a Garmin .fit file into a MySSI dive: finding your dive site from GPS, entry vs. exit points, and scanning a full Garmin Connect history export.">
+<link rel="canonical" href="https://fitdive.app/garmin-import.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FitDive">
+<meta property="og:title" content="Importing from a Garmin export — FitDive">
+<meta property="og:description" content="How FitDive turns a Garmin .fit file into a MySSI dive: finding your dive site from GPS, entry vs. exit points, and scanning a full Garmin Connect history export.">
+<meta property="og:url" content="https://fitdive.app/garmin-import.html">
+<meta property="og:image" content="https://fitdive.app/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Importing from a Garmin export — FitDive">
+<meta name="twitter:image" content="https://fitdive.app/assets/og-image.png">
+<link rel="icon" href="/assets/icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/icon.png" alt=""><span>FitDive</span></a>
+    <nav class="site">
+      <a href="/docs.html">Docs</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="eyebrow">Docs → How it works</p>
+    <h1>Importing from a Garmin export</h1>
+    <p class="lede">Every import starts from a Garmin <code>.fit</code> file - whether it's one dive shared straight from the Garmin Dive app, or hundreds of them from a full Garmin Connect data export. Here's what FitDive does with the file itself, separate from <a href="/dive-matching.html">how it checks the result against your MySSI logbook</a>.</p>
+
+    <h2>Finding the dive site</h2>
+    <p>Your Garmin dive computer records a GPS fix when it can get one - usually only on the surface, before you descend or after you surface. FitDive reads that fix (or falls back to your phone's current location, or a fallback site you set once in Settings, if the file has none) and searches MySSI's own dive-site database within a radius around it.</p>
+    <p>If more than one site turns up nearby, FitDive shows you the list and asks - it never silently guesses between two real candidates.</p>
+
+    <div class="inline-shot">
+      <img src="/assets/screenshots/site-picker.png" alt="FitDive's site picker, listing nearby MySSI dive sites by distance with public/private markers">
+    </div>
+
+    <div class="note warn">
+      <b>Entry point vs. exit point.</b> Some dive computers only get a GPS lock <em>after</em> you're back on the surface at the end of the dive - which can be a genuinely different spot from where you entered, especially on a drift dive. FitDive reads both fixes from the file separately. When you add a new private dive site, you can pick the entry point, the exit point, or your phone's current GPS, and drag the pin from there - see <a href="/using.html#private-sites">Private Sites</a> for what that screen looks like.
+    </div>
+
+    <h3>Private dive sites</h3>
+    <p>MySSI's own site search only ever returns public listings - it can't find a private site you've already created, even one of your own. FitDive works around this by remembering every private site you create (and caching its MySSI-reported dive count) so it's reusable the next time you dive there, without you needing to search for it first.</p>
+
+    <h2>Importing your whole Garmin history</h2>
+    <p>If you've been diving with a Garmin computer longer than you've had FitDive, you don't have to share each dive in one at a time. Request a full data export from <a href="https://www.garmin.com/en-US/account/datamanagement/" target="_blank" rel="noopener">Garmin Connect's data management page</a> - it can take Garmin a little while to prepare and email you the download.</p>
+    <p>Once you have it, open <strong>Import Garmin History</strong> on FitDive's home screen and pick the export file. FitDive scans every dive inside it in one pass and checks each one against your MySSI logbook exactly as described in <a href="/dive-matching.html">how dive matching works</a> - so you get a single list showing what's already logged, what's a possible match worth a second look, and what's still missing, even for dives from years before you had the app.</p>
+    <p>From that list you can import anything missing one at a time, the same review step as a single-dive import every time.</p>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 JJeff Development, LLC</span>
+    <span><a href="/privacy.html">Privacy</a> · <a href="/support.html">Support</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

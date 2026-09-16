@@ -39,22 +39,24 @@
     <p class="lede">What each screen does, in the order you'll actually meet them.</p>
 
     <h2>Import</h2>
-    <p>FitDive's home screen. Share a <code>.fit</code> file into it from the Garmin Dive app, or tap <strong>Import a .fit file</strong> to pick one directly. FitDive decodes it, works out the dive site, and checks your logbook for the right dive number - asking you first if anything's ambiguous (which site, or a gap in your numbers). The Review screen shows everything before it submits, with an optional Add Details section for buddies, gear, and conditions.</p>
+    <p>FitDive's home screen. Share a <code>.fit</code> file into it from the Garmin Dive app, or tap <strong>Import a .fit file</strong> to pick one directly. FitDive decodes it, works out the dive site (see <a href="/garmin-import.html">importing from a Garmin export</a> for how), and checks your logbook for the right dive number - asking you first if anything's ambiguous. The Review screen shows everything before it submits, with an optional Add Details section for buddies, gear, and conditions.</p>
 
     <div class="inline-shot">
-      <img src="/assets/screenshots/site-picker.png" alt="FitDive's site picker, listing nearby MySSI dive sites by distance with public/private markers">
+      <img src="/assets/screenshots/review-dive.png" alt="FitDive's Review screen, showing a decoded Garmin dive's site, time, discipline, dive number, duration, depth, and gas before submitting">
     </div>
 
     <h2>My SSI Logbook</h2>
     <p>Logs and Logbooks → My SSI Logbook. A real, read-only view of your actual MySSI logbook - dive #, date, site, depth, duration - with a depth profile graph for any dive FitDive has data for. Tap Sync to pull the current logbook from MySSI; see <a href="/dive-matching.html">how dive matching works</a> for why syncing here first makes duplicate-checking more reliable.</p>
 
     <h2>Garmin Dive Log &amp; Import Garmin History</h2>
-    <p>Garmin Dive Log lists every Garmin dive FitDive has seen, with its match status against MySSI. Import Garmin History takes a full Garmin Connect data export and scans it in one pass against your MySSI logbook, so years of dives you never touched with FitDive show up as either already logged or still missing.</p>
+    <p>Garmin Dive Log lists every Garmin dive FitDive has seen, with its match status against MySSI. Import Garmin History takes a full Garmin Connect data export and scans it in one pass against your MySSI logbook, so years of dives you never touched with FitDive show up as either already logged or still missing - see <a href="/garmin-import.html">importing from a Garmin export</a> for the full walkthrough.</p>
 
-    <h2>Private Sites</h2>
-    <p>Logs and Logbooks → Private Sites. Every private dive site you've created through FitDive, with a running count of dives logged at each one (once MySSI reports at least one - see <a href="/dive-matching.html#private-sites">the caveat on how it works</a>). Sync pulls in any FitDive already knows how to find; Restore from iCloud recovers ones created on another device.</p>
+    <h2 id="private-sites">Private Sites</h2>
+    <p>Logs and Logbooks → Private Sites. Every private dive site you've created through FitDive, with a running count of dives logged at each one (once MySSI reports at least one - see <a href="/garmin-import.html">the caveat on how it works</a>). Sync pulls in any FitDive already knows how to find; Restore from iCloud recovers ones created on another device.</p>
 
-    <div class="shot-placeholder">Screenshot coming soon</div>
+    <div class="inline-shot">
+      <img src="/assets/screenshots/add-private-site.png" alt="Adding a private dive site, with Entry Point, Exit Point, and Current GPS source chips above the map">
+    </div>
 
     <h2>Change Log</h2>
     <p>Logs and Logbooks → SSI Change Logs. A full on-device record of every import and delete FitDive has made for you - exactly what was submitted or removed, for when you need to check what happened on a specific dive. Unlike the anonymized run log (Settings → Report a Bug), this one keeps real details like location and buddy names, since that's what makes it useful for debugging a specific dive.</p>
