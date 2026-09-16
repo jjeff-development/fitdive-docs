@@ -42,10 +42,16 @@
     <p>Your Garmin dive computer records a GPS fix when it can get one - usually only on the surface, before you descend or after you surface. FitDive reads that fix (or falls back to your phone's current location, or a fallback site you set once in Settings, if the file has none) and searches MySSI's own dive-site database within a radius around it.</p>
     <p>If more than one site turns up nearby, FitDive shows you the list and asks - it never silently guesses between two real candidates.</p>
 
-    <div class="shot-placeholder">Screenshot coming soon</div>
+    <div class="inline-shot">
+      <img src="/assets/screenshots/site-picker.png" alt="FitDive's site picker, listing nearby MySSI dive sites by distance with public/private markers">
+    </div>
 
     <div class="note warn">
       <b>Entry point vs. exit point.</b> Some dive computers only get a GPS lock <em>after</em> you're back on the surface at the end of the dive - which can be a genuinely different spot from where you entered, especially on a drift dive. FitDive reads both fixes from the file separately. When you add a new private dive site, you can pick the entry point, the exit point, or your phone's current GPS, and drag the pin from there.
+    </div>
+
+    <div class="inline-shot">
+      <img src="/assets/screenshots/add-private-site.png" alt="Adding a private dive site, with Entry Point, Exit Point, and Current GPS source chips above the map">
     </div>
 
     <h3 id="private-sites">Private dive sites</h3>
