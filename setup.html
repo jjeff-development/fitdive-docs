@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setup guide — FitDive</title>
+<meta name="description" content="Install FitDive, sign in with your MySSI account, and set the few one-time options before your first import.">
+<link rel="canonical" href="https://fitdive.app/setup.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FitDive">
+<meta property="og:title" content="Setup guide — FitDive">
+<meta property="og:description" content="Install FitDive, sign in with your MySSI account, and set the few one-time options before your first import.">
+<meta property="og:url" content="https://fitdive.app/setup.html">
+<meta property="og:image" content="https://fitdive.app/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Setup guide — FitDive">
+<meta name="twitter:image" content="https://fitdive.app/assets/og-image.png">
+<link rel="icon" href="/assets/icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .step{display:flex;gap:20px;align-items:flex-start;margin:28px 0;}
+  .step-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+  .step-body{flex:1;min-width:0;}
+  .step-body h3{margin:0 0 6px;}
+  .step-body p{margin:0;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/icon.png" alt=""><span>FitDive</span></a>
+    <nav class="site">
+      <a href="/docs.html">Docs</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="eyebrow">Docs → Getting started</p>
+    <h1>Setup guide</h1>
+    <p class="lede">A handful of one-time steps, then every import is one tap. None of this is required up front - FitDive will ask for whatever it needs the first time it actually comes up.</p>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>Install FitDive and sign in</h3>
+        <p>Get FitDive from the App Store, open <strong>Settings</strong>, and enter your MySSI email and password. They're stored only in the iOS Keychain on your device - never sent anywhere except to MySSI itself, exactly as if you'd typed them into their own site.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>Pick metric or imperial</h3>
+        <p>Also in Settings - this controls the units on the optional Add Details fields (weight, tank pressure, visibility). Everything from the Garmin file itself is unaffected.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>Set a fallback dive site (optional, but recommended)</h3>
+        <p>FitDive works out your dive site from GPS automatically. For the rare dive with no GPS and no phone location, it needs a fallback site to use instead. <a href="/find-dive-site.html">Here's how to find a dive-site ID</a> for the site you dive most - your local shop, quarry, or home reef.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h3>Sync your buddy list (optional)</h3>
+        <p>Settings → Sync Buddies pulls your MySSI buddy list, with photos, so you can pick who was on a dive from a searchable list instead of typing names. You can also set a favorite buddy that's pre-selected on every import.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <h3>Share your first dive</h3>
+        <p>In the Garmin Dive app: open the dive, <strong>Export Dive as FIT File</strong>, then choose FitDive from the share sheet - or pick a <code>.fit</code> file directly from FitDive's own home screen. See <a href="/using.html">Using FitDive</a> for what happens next on each screen.</p>
+      </div>
+    </div>
+
+    <div class="note">
+      <b>Already have years of dives on your Garmin?</b> Request a full data export from Garmin Connect, then use <strong>Import Garmin History</strong> on FitDive's home screen - it finds every dive in the export and checks each one against your MySSI logbook in one pass, so you can see exactly what's already logged and what's still missing.
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 JJeff Development, LLC</span>
+    <span><a href="/privacy.html">Privacy</a> · <a href="/support.html">Support</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -5,6 +5,11 @@ Public site + docs for [FitDive](https://fitdive.app) — Garmin dive `.fit` →
 Plain static HTML, served via GitHub Pages. No build step.
 
 - `index.html` — overview, pricing, App Store description
+- `docs.html` — docs table of contents
+- `setup.html` — getting-started setup guide
+- `using.html` — tour of every screen in the app
+- `dive-matching.html` — how site/dive matching works, including the caveats
+- `find-dive-site.html` — how to find a fallback dive-site ID
 - `privacy.html` — Privacy Policy (App Store submission URL)
 - `support.html` — bug reporting + known-issue status
 - `status.txt` — the app's live status check (see below)

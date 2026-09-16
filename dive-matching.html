@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How dive matching works — FitDive</title>
+<meta name="description" content="How FitDive finds your dive site from GPS and checks a Garmin dive against your MySSI logbook - and the caveats, including why MySSI not storing a timezone means some matches need a human to decide.">
+<link rel="canonical" href="https://fitdive.app/dive-matching.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FitDive">
+<meta property="og:title" content="How dive matching works — FitDive">
+<meta property="og:description" content="How FitDive finds your dive site from GPS and checks a Garmin dive against your MySSI logbook - and the caveats, including why MySSI not storing a timezone means some matches need a human to decide.">
+<meta property="og:url" content="https://fitdive.app/dive-matching.html">
+<meta property="og:image" content="https://fitdive.app/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How dive matching works — FitDive">
+<meta name="twitter:image" content="https://fitdive.app/assets/og-image.png">
+<link rel="icon" href="/assets/icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/icon.png" alt=""><span>FitDive</span></a>
+    <nav class="site">
+      <a href="/docs.html">Docs</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="eyebrow">Docs → How it works</p>
+    <h1>How dive matching works</h1>
+    <p class="lede">FitDive does two kinds of matching on every import: finding <em>which dive site</em> you were at, and checking whether <em>this dive</em> is already in your MySSI logbook. Both are best-effort - here's exactly how each works, and where they can get it wrong.</p>
+
+    <h2>Finding the dive site</h2>
+    <p>Your Garmin dive computer records a GPS fix when it can get one - usually only on the surface, before you descend or after you surface. FitDive reads that fix (or falls back to your phone's current location, or a fallback site you set once in Settings, if the file has none) and searches MySSI's own dive-site database within a radius around it.</p>
+    <p>If more than one site turns up nearby, FitDive shows you the list and asks - it never silently guesses between two real candidates.</p>
+
+    <div class="shot-placeholder">Screenshot coming soon</div>
+
+    <div class="note warn">
+      <b>Entry point vs. exit point.</b> Some dive computers only get a GPS lock <em>after</em> you're back on the surface at the end of the dive - which can be a genuinely different spot from where you entered, especially on a drift dive. FitDive reads both fixes from the file separately. When you add a new private dive site, you can pick the entry point, the exit point, or your phone's current GPS, and drag the pin from there.
+    </div>
+
+    <h3 id="private-sites">Private dive sites</h3>
+    <p>MySSI's own site search only ever returns public listings - it can't find a private site you've already created, even one of your own. FitDive works around this by remembering every private site you create (and caching its MySSI-reported dive count) so it's reusable the next time you dive there, without you needing to search for it first.</p>
+
+    <h2>Checking your logbook</h2>
+    <p>Before submitting, FitDive checks the Garmin dive against two records:</p>
+    <ol>
+      <li><b>Its own memory</b> of dives it has personally submitted or that you chose to skip.</li>
+      <li><b>Your cached My SSI Logbook</b> (Logs and Logbooks → My SSI Logbook → Sync) - so a dive you typed into MySSI by hand, years before you had FitDive, can still show up as already logged.</li>
+    </ol>
+    <p>The second check is only as good as your last Sync there - sync your logbook first if you want a reliable historical count, e.g. before a bulk Garmin history import.</p>
+    <p>A match is decided by date/time (to the minute) and duration being close enough to survive MySSI's own seconds-free display and independent rounding on each side.</p>
+
+    <h3>"Possible match" and the timezone problem</h3>
+    <p>MySSI's logbook stores the date and time you log a dive as plain wall-clock digits - it doesn't store which timezone you were in when you entered them. Your Garmin dive computer, on the other hand, always knows its own local offset at the moment you dove. Those two clocks only actually agree if you logged the dive from the same timezone you dove in.</p>
+    <p>They can disagree by a lot: dive in Bali, then log it into MySSI a week later back home in New York, and the date/time MySSI stored is offset from what your Garmin recorded by the gap between those two zones. FitDive can't know, after the fact, which timezone you were in when you (or someone else) typed a dive in - so instead of silently treating a mismatch as "not the same dive," it widens its search to 24 hours either side and flags anything with a very close duration and depth as a <b>possible match</b>.</p>
+    <div class="note">
+      A possible match is a hint to check by hand, not an automatic decision - nothing gets marked imported from this alone. If the site, depth, and duration all genuinely line up, it's almost certainly the same dive under a shifted clock.
+    </div>
+
+    <div class="shot-placeholder">Screenshot coming soon</div>
+
+    <h3>What this doesn't catch</h3>
+    <p>Matching is a best-effort safety net, not a guarantee. If you share the exact same <code>.fit</code> file into FitDive twice, and neither its own memory nor your synced logbook already has a record close enough to flag, it will create a second entry - MySSI itself doesn't reject duplicates either. If that happens, delete the extra one <a href="/">from FitDive</a> or directly in MySSI.</p>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 JJeff Development, LLC</span>
+    <span><a href="/privacy.html">Privacy</a> · <a href="/support.html">Support</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
